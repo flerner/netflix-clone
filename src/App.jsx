@@ -1,4 +1,4 @@
-import './App.css'
+
 import Row from './components/Row'
 import requests from "./requests.js"
 function App() {
