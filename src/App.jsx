@@ -1,11 +1,12 @@
 import Row from './components/Row'
 import requests from "./requests.js"
-
+import Banner from "./components/Banner.jsx"
 function App() {
 
   return (
     <div className='bg-[#141414]'>
-      <h1 className='text-3xl font-bold underline'>Netflix Clone</h1>
+
+      <Banner fetchUrl={requests.find(r => r.title === "Trending").endPoint} />
       {requests.map(r => (
         <Row title={r.title} fetchUrl={r.endPoint} isVerticalImage={r.isVerticalImage} />
       ))}
