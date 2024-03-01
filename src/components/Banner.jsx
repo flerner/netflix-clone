@@ -24,22 +24,25 @@ function Banner({ fetchUrl }) {
     console.log(isObjEmpty(movie))
     return (
         <header>
-            {!isObjEmpty(movie) && <div className="relative inline-block">
-                <img src={`${IMAGE_PATH_BASE_URL}${movie.backdrop_path}`} className="w-full block h-max-75" />
-                <div className="absolute z-10 top-1 left-1/2 transform translate-x--1/2 translate-y--1/2 text-[#fff]">Aca va el header</div>
-                <div className="absolute z-10 top-1/4 left-20 transform translate-x--1/2 translate-y--1/2">
-                    <div className="flex flex-col">
-                        <h1 className="text-4xl text-[#fff]">{movie.title ? movie.title : movie.name}</h1>
-                        <p className="max-w-60  text-[#fff]">{truncateText(movie.overview, 150)}</p>
-                        <div className="flex">
-                            <button className="bg-[#fff] text-black hover:bg-slate-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Play</button>
-                            <button className="bg-[#666666] text-white hover:opacity-50 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">More Information</button>
-                        </div>
+            <div className="bg-auto max-h-screen" style={{ backgroundSize: "cover", backgroundImage: `url(${IMAGE_PATH_BASE_URL}${movie.backdrop_path})`, }} >
+                <div className="ml-20 pt-20">
+                    <div className="flex flex-col pl-20 pt-20">
+                        <h1 className="text-6xl max-w-60 text-[#fff] pb-5">{movie.title ? movie.title : movie.name}</h1>
+                        <p className="max-w-60  text-[#fff]">{truncateText(movie.overview, 300)}</p>
                     </div>
+                    <div className="pl-20 pt-10 pb-60">
+                        <button className="bg-[#fff] text-black hover:bg-slate-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Play</button>
+                        <button className="bg-[#666666] text-white hover:opacity-50 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">More Information</button>
+
+                    </div>
+                </div>
+                <div className="h-20 w-auto bg-gradient-to-b from-transparent to-[#141414]">
 
 
                 </div>
-            </div>}
+
+            </div>
+
 
         </header>
     )
