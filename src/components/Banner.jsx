@@ -13,16 +13,19 @@ function Banner({ fetchUrl }) {
         fetchData()
     }, [fetchUrl])
     function truncateText(text, maxLength) {
-        console.log(text)
         if (text.length <= maxLength) {
             return text;
         }
         return text.substr(0, maxLength) + '...';
     }
+    function isObjEmpty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    console.log(isObjEmpty(movie))
     return (
         <header>
-            <div className="relative inline-block">
-                {movie && <img src={`${IMAGE_PATH_BASE_URL}${movie.backdrop_path}`} className="w-full block h-max-75" />}
+            {!isObjEmpty(movie) && <div className="relative inline-block">
+                <img src={`${IMAGE_PATH_BASE_URL}${movie.backdrop_path}`} className="w-full block h-max-75" />
                 <div className="absolute z-10 top-1 left-1/2 transform translate-x--1/2 translate-y--1/2 text-[#fff]">Aca va el header</div>
                 <div className="absolute z-10 top-1/4 left-20 transform translate-x--1/2 translate-y--1/2">
                     <div className="flex flex-col">
@@ -36,7 +39,7 @@ function Banner({ fetchUrl }) {
 
 
                 </div>
-            </div>
+            </div>}
 
         </header>
     )
