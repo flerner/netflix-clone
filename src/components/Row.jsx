@@ -16,7 +16,7 @@ function Row({ title, fetchUrl, isVerticalImage }) {
             <h1 className="font-bold text-2xl p-3 text-[#e5e5e5]">{title}</h1>
             <div className="flex overflow-x-auto overflow-y-hidden scrollbar-hide no-scrollbar p-3">
                 {movies.length > 0 ? movies.map((movie) => (
-                    <img className="w-full max-h-64 object-contain hover:scale-110 mr-2 transform transition duration-300"
+                    <img className="w-full max-h-64 object-contain hover:scale-110 hover:z-10 mr-2 transform transition duration-300"
                         src={`${IMAGE_PATH_BASE_URL}${isVerticalImage ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} key={movie.id} />
                 )) : <h1>No hay pelis</h1>}
             </div>
