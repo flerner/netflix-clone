@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import instance from "../axios.js"
+import { FaPlay } from "react-icons/fa";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 function Banner({ fetchUrl }) {
     const [movie, setMovie] = useState({})
@@ -30,9 +32,10 @@ function Banner({ fetchUrl }) {
                         <h1 className="text-6xl max-w-60 text-[#fff] pb-5">{movie.title ? movie.title : movie.name}</h1>
                         <p className="max-w-60  text-[#fff]">{truncateText(movie.overview, 200)}</p>
                     </div>
-                    <div className="pl-5 pt-10 pb-40">
-                        <button className="bg-[#fff] text-black hover:bg-slate-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Play</button>
-                        <button className="bg-[#666666] text-white hover:opacity-50 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">More Information</button>
+                    <div className="pl-5 pt-10 pb-40 flex">
+                        <button className="bg-[#fff] text-black hover:bg-slate-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex items-center"><FaPlay />Play</button>
+                        <button className="bg-[#666666] text-white hover:opacity-50 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex items-center"><IoIosInformationCircleOutline className="text-2xl" />
+                            More Information </button>
 
                     </div>
                 </div>
