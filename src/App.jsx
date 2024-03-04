@@ -9,7 +9,7 @@ function App() {
       <Banner fetchUrl={requests.find(r => r.title === "Trending").endPoint} className="" />
       <div className=''>
         {requests.map(r => (
-          <Row title={r.title} fetchUrl={r.endPoint} isVerticalImage={r.isVerticalImage} />
+          <Row title={r.title} fetchUrl={r.endPoint} isVerticalImage={r.isVerticalImage} key={r.id} />
         ))}
       </div>
 
