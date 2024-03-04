@@ -15,7 +15,7 @@ function Navbar() {
     }, [])
 
     return (
-        <div className={`transform transition duration-1000 flex max-h-16 fixed top-0 w-full z-20 items-center justify-between ${show && `transform transition duration-1000 bg-[#141414]`}`}>
+        <div className={`transform transition duration-1000 flex max-h-16 fixed top-0 w-full z-20 items-center justify-between ${show && ` bg-[#141414]`}`}>
             <img className="object-cover h-16" src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Netflix_Logomark.png" alt="Netflix Logo" />
             <img className="object-cover h-10 mr-5" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile Image" />
         </div>
