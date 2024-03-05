@@ -8,10 +8,9 @@ function Row({ title, fetchUrl, isVerticalImage }) {
     const [movieId, setMovieId] = useState('')
     const IMAGE_PATH_BASE_URL = "https://image.tmdb.org/t/p/original/"
     const opts = {
-        height: '390',
+        height: '600',
         width: '100%',
         playerVars: {
-            // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
         },
     };
@@ -24,12 +23,10 @@ function Row({ title, fetchUrl, isVerticalImage }) {
     }, [fetchUrl])
 
     const handleImgClick = (movie) => {
-
         if (movieId) {
             setMovieId('')
         } else {
             movieTrailer(movie.name ? movie.name : movie.title).then((url) => {
-                console.log
                 const urlParams = new URLSearchParams(new URL(url).search)
                 setMovieId(urlParams.get("v"))
             })
