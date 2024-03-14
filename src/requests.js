@@ -1,4 +1,4 @@
-const API_KEY = import.meta.env.VITE_TMDB_API
+const API_KEY = import.meta.env.VITE_APP_TMDB_API
 console.log(API_KEY)
 
 const requests = [
